@@ -1,3 +1,5 @@
+// import "firebase/firestore";
+
 function User() {
     const name = "Paola";
     return (
