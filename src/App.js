@@ -1,17 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import User from './components/User';
-import ProductList from './components/ProductsList';
-
+import ProductsList from './components/ProductsList';
+import { Col, Container, Row} from 'react-bootstrap';
 
 
 function App() {
-  const name = "Paola";
+  // const name = "Paola";
   return (
-    <div className="App">
-      <ProductList />
-      <User />
-    </div>
+    <Container className="App">
+      <Row>
+        <Col ><ProductsList /> </Col>
+        <Col> <User /> </Col>
+      </Row>
+      <Row>
+        <Col>1 of 3</Col>
+        <Col>AQUI VA EL PEDIDO</Col>
+      </Row>
+    </Container>
   );
 }
 export default App;
