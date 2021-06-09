@@ -6,7 +6,7 @@ function ProductList() {
         <h1>Lista de productos</h1>
         <div>
             <button className = "btn btn-dark">Pan masa madre</button>
-            <button>Pasteles</button>
+            <button className = "btn btn-dark">Pasteles</button>
         </div>
       </div>
     );
