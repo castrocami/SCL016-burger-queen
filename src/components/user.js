@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css"
+
 // import "firebase/firestore";
 
 function User() {
@@ -10,12 +12,13 @@ function User() {
       <h1>
       Justa Panaderia
         </h1>
-        <h2>
+        <h3>
           Toma Pedidos
-        </h2>
-      <p className="userName" >
-     nombre cliente:
-      </p>
+        </h3>
+        <form>
+        <input type="text" placeholder="Nombre de cliente"></input>
+        <button className="btn-group-toggle" type="submit">Check</button>
+        </form>
     </main>
   
         
