@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { categories } from '../mockData/productsData'
-import DisplayProducts from "./ProductsList";
+import ProductsList from "./ProductsList";
 import { Button, Row, Col } from 'react-bootstrap';
 
-function ProductList() {
+function ProductsSection({addEntry}) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   return (
     <div className="App">
@@ -14,12 +14,12 @@ function ProductList() {
         })}
       </div>
       <Row>
-        <Col>      <DisplayProducts
-        selectedCategory={selectedCategory}
-      /></Col>
+        <Col>      
+          <ProductsList selectedCategory={selectedCategory} addEntry={addEntry}/>
+        </Col>
       </Row>
 
     </div >
   );
 }
-export default ProductList;
+export default ProductsSection;
