@@ -1,46 +1,38 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import firebase from "firebase/app"
 import { useState } from "react";
+import { Button } from 'react-bootstrap';
 
-function User() {
+function User({addOrderId}) {
   const [userName, setUserName] = useState(null);
   return (
     <div className="App">
-      <header>
-      </header>
       <main>
-        <h1>
-          Justa Panaderia
-        </h1>
-        <h3>
-          Toma Pedidos
-        </h3>
         <div>
           <input onChange={event => setUserName(event.target.value)} type="text" placeholder="Nombre de cliente"></input>
-          <button className="btn-group-toggle" onClick={sendName(userName)}>Check</button>
+          <Button className="btn-group-toggle" onClick={sendName(userName, addOrderId)}>Check</Button>
         </div>
       </main>
-
-
     </div>
   );
 }
 
 export default User;
 
-const sendName = (userName) => {
+const sendName = (userName, addOrderId) => {
   return () => {
-  const db = firebase.firestore();
-  // Add a new document with a generated id.
-  db.collection("orders").add({
-    name: userName,
-    order: "pan"
-  })
-    .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
+    const db = firebase.firestore();
+    // Add a new document with a generated id.
+    db.collection("orders").add({
+      name: userName,
     })
-    .catch((error) => {
-      console.error("Error adding document: ", error);
-    });
+      .then((docRef) => {
+        addOrderId(docRef.id);
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
   }
 }
+
