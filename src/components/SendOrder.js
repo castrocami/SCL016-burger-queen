@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from 'react-bootstrap';
 import firebase from "firebase/app"
 
-function SendOrderToKitchen({orderId}) {
+function SendOrderToKitchen({orderId , orderEntries}) {
     return (
         <div>
-            <Button onClick = {sendOrder(orderId)} >Enviar a Cocina</Button>
+            <Button onClick = {sendOrder(orderId , orderEntries)} >Enviar a Cocina</Button>
         </div>
     )
 }
@@ -15,13 +15,13 @@ export default SendOrderToKitchen;
 
 
 
-const sendOrder = (orderId) => {
+const sendOrder = (orderId , orderEntries) => {
     return () =>{
         const db = firebase.firestore();
-        var sendingOrder = db.collection("orders").doc();
+        var sendingOrder = db.collection("orders").doc(orderId);
         // Set the "capital" field of the city 'DC'
         return sendingOrder.update({
-          Products: [{ product: "Pan de canela", price: 2400, quantity: 1 }, { product: "Trenza de chocolate", price: 2400, quantity: 1 }]
+          Products: orderEntries,
         })
           .then(() => {
             console.log("Document successfully updated!");
