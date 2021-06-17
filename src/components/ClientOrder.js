@@ -54,7 +54,7 @@ function ClientOrder() {
             </Table>
         </div>
         <div>
-            <SendOrderToKitchen orderId ={orderId}/>
+            <SendOrderToKitchen orderId ={orderId} orderEntries = {orderEntries}/>
         </div>
           </Col>
         </Row>
