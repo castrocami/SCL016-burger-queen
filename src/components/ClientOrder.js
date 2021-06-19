@@ -18,6 +18,14 @@ function ClientOrder() {
     const addOrderId = (Id) =>{
         setOrderId(Id);
     }
+    //Total price 
+    const totalPrice = () =>{
+        let totalPrice = 0;
+        orderEntries.forEach((orderEntry)=>{
+            totalPrice = orderEntry.price + totalPrice;
+        })
+        return totalPrice;
+    }
     return (
         <Container>
         <Row>
@@ -31,7 +39,7 @@ function ClientOrder() {
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Cantidad</th>
                         <th>Productos</th>
                         <th>Precio</th>
                         <th>Eliminar</th>
@@ -39,7 +47,7 @@ function ClientOrder() {
                 </thead>
                 <tbody>
                     {
-                        orderEntries.map((orderEntry)=>{
+                        orderEntries.map((orderEntry)=>{                            
                             return (
                             <tr>
                             <td>1</td>
@@ -51,6 +59,14 @@ function ClientOrder() {
                         })
                     }
                 </tbody>
+            </Table>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                    <th>Total:</th>
+                    <th>{totalPrice()}</th>
+                    </tr>
+                </thead>
             </Table>
         </div>
         <div>
