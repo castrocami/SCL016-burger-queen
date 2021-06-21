@@ -47,9 +47,9 @@ function ClientOrder() {
                 </thead>
                 <tbody>
                     {
-                        orderEntries.map((orderEntry)=>{                            
+                        orderEntries.map((orderEntry, index)=>{                            
                             return (
-                            <tr>
+                            <tr key={index}> 
                             <td>1</td>
                             <td>{orderEntry.name}</td>
                             <td>{orderEntry.price}</td>
