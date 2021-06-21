@@ -9,8 +9,8 @@ function ProductsSection({addEntry}) {
     <div className="App">
       <h1>Lista de productos</h1>
       <div>
-        {categories.map((category) => {
-          return (<Button onClick={() => { setSelectedCategory(category) }} className="btn btn-dark">{category}</Button>)
+        {categories.map((category,index) => {
+          return (<Button key={index} onClick={() => { setSelectedCategory(category) }} className="btn btn-dark">{category}</Button>)
         })}
       </div>
       <Row>
