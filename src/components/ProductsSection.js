@@ -3,7 +3,7 @@ import { categories } from '../mockData/productsData'
 import ProductsList from "./ProductsList";
 import { Button, Row, Col } from 'react-bootstrap';
 
-function ProductsSection({addEntry}) {
+function ProductsSection({addEntry, orderEntries}) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   return (
     <div className="App">
@@ -15,7 +15,7 @@ function ProductsSection({addEntry}) {
       </div>
       <Row>
         <Col>      
-          <ProductsList selectedCategory={selectedCategory} addEntry={addEntry}/>
+          <ProductsList  orderEntries = {orderEntries} selectedCategory={selectedCategory} addEntry={addEntry}/>
         </Col>
       </Row>
 
