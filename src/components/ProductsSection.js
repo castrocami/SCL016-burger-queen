@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { categories } from '../mockData/productsData'
-import ProductsList from "./ProductsList";
+import ProductsList from "./productsList";
 import { Button, Row, Col } from 'react-bootstrap';
 
 function ProductsSection({addEntry, orderEntries}) {

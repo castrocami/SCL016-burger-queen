@@ -10,13 +10,15 @@ function ClientOrder() {
     //DEfinir un estado
     const [orderEntries, setOrderEntries] = useState([]);
     const [orderId, setOrderId] = useState(null);
+    const [userName, setUserName] = useState(null);
     //Crear funcion para setear orderEntries
     const addEntry = (product) => {
         setOrderEntries([...orderEntries, product]); // setear un nuevo estado con lo que habia antes + en nuevo producto
     }
     //Funcion que setea orderId
-    const addOrderId = (Id) => {
+    const addOrderId = (Id, Name) => {
         setOrderId(Id);
+        setUserName(Name)
     }
     //Total price 
     const totalPrice = () => {
@@ -25,6 +27,12 @@ function ClientOrder() {
             totalPrice = orderEntry.price + totalPrice;
         })
         return totalPrice;
+    }
+    if(orderId == null){
+      return(
+      <Container>
+        <User addOrderId={addOrderId} />
+      </Container>)
     }
     return (
         <Container>
@@ -35,7 +43,7 @@ function ClientOrder() {
                 <Col >
                     <div>
                         <h1>ORDEN DEL CLIENTE</h1>
-                        <User addOrderId={addOrderId} />
+                        <h2>Pedido de: {userName}</h2>
                         <Table striped bordered hover size="sm">
                             <thead>
                                 <tr>
