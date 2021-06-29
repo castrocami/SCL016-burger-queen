@@ -27,7 +27,7 @@ const sendName = (userName, addOrderId) => {
       name: userName,
     })
       .then((docRef) => {
-        addOrderId(docRef.id);
+        addOrderId(docRef.id, userName);
         console.log("Document written with ID: ", docRef.id);
       })
       .catch((error) => {
