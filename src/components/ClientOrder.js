@@ -11,8 +11,11 @@ function ClientOrder() {
     const [orderEntries, setOrderEntries] = useState([]);
     const [orderId, setOrderId] = useState(null);
     const [userName, setUserName] = useState(null);
+
+    
     //Crear funcion para setear orderEntries
     const addEntry = (product) => {
+        product.quantity = 1;
         setOrderEntries([...orderEntries, product]); // setear un nuevo estado con lo que habia antes + en nuevo producto
     }
     //Funcion que setea orderId
@@ -27,6 +30,21 @@ function ClientOrder() {
             totalPrice = orderEntry.price + totalPrice;
         })
         return totalPrice;
+    }
+    // Listener + a product
+    const incrementProductQuantity = (product) =>{
+        return () =>{
+            const newOrderEntries = [];
+            orderEntries.forEach((orderEntry)=>{
+                if(product.name === orderEntry.name){
+                    const newQuantity = orderEntry.quantity + 1;
+                    newOrderEntries.push({...orderEntry, quantity: newQuantity })
+                } else {
+                    newOrderEntries.push({...orderEntry})
+                }
+            })
+            setOrderEntries(newOrderEntries);
+        }
     }
     if(orderId == null){
       return(
@@ -56,14 +74,14 @@ function ClientOrder() {
                             <tbody>
                                 {
                                     orderEntries.map((orderEntry, index) => {
-                                        console.log(orderEntry);
+                                        console.log(orderEntries);
                                         return (
                                             <tr key={index}>
                                                 <td>
                                                     <ButtonGroup aria-label="Basic example">
                                                         <Button variant="secondary">-</Button>
-                                                        <Button variant="secondary">1</Button>
-                                                        <Button variant="secondary">+</Button>
+                                                        <Button variant="secondary">{orderEntry.quantity}</Button>
+                                                        <Button onClick = {incrementProductQuantity(orderEntry)} variant="secondary">+</Button>
                                                     </ButtonGroup>
                                                 </td>
                                                 <td>{orderEntry.name}</td>
