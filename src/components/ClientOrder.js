@@ -7,7 +7,7 @@ import User from './User';
 
 function ClientOrder() {
     //El estado de  valor inicial,
-    //DEfinir un estado
+    //Definir un estado
     const [orderEntries, setOrderEntries] = useState([]);
     const [orderId, setOrderId] = useState(null);
     const [userName, setUserName] = useState(null);
@@ -23,6 +23,7 @@ function ClientOrder() {
         setOrderId(Id);
         setUserName(Name)
     }
+        
     //Total price 
     const totalPrice = () => {
         let totalPrice = 0;
@@ -46,6 +47,39 @@ function ClientOrder() {
             setOrderEntries(newOrderEntries);
         }
     }
+
+        // Listener + decrease product
+        const decreaseProductQuantity = (product) =>{
+            return () =>{
+                const newOrderEntries = [];
+                orderEntries.forEach((orderEntry)=>{
+                    if(product.name === orderEntry.name){
+                        const newQuantity = orderEntry.quantity - 1;
+                        if(newQuantity > 0){
+                            newOrderEntries.push({...orderEntry, quantity: newQuantity })
+                        }   
+                    } else {
+                        newOrderEntries.push({...orderEntry})
+                    }
+                })
+                setOrderEntries(newOrderEntries);
+            }
+        }
+
+        // Delete Button
+        const deleteButton = (product) =>{
+            return () =>{
+                const newOrderEntries = [];
+                orderEntries.forEach((orderEntry)=>{
+                    if(orderEntry.name !== product.name){
+                            newOrderEntries.push({...orderEntry})
+                    } 
+                })
+                setOrderEntries(newOrderEntries);        
+            }
+            
+        }
+        
     if(orderId == null){
       return(
       <Container>
@@ -74,19 +108,18 @@ function ClientOrder() {
                             <tbody>
                                 {
                                     orderEntries.map((orderEntry, index) => {
-                                        console.log(orderEntries);
                                         return (
                                             <tr key={index}>
                                                 <td>
                                                     <ButtonGroup aria-label="Basic example">
-                                                        <Button variant="secondary">-</Button>
+                                                        <Button onClick ={decreaseProductQuantity(orderEntry)}variant="secondary">-</Button>
                                                         <Button variant="secondary">{orderEntry.quantity}</Button>
                                                         <Button onClick = {incrementProductQuantity(orderEntry)} variant="secondary">+</Button>
                                                     </ButtonGroup>
                                                 </td>
                                                 <td>{orderEntry.name}</td>
                                                 <td>{orderEntry.price}</td>
-                                                <td>Eliminar</td>
+                                                <td><button color="danger" onClick = {deleteButton(orderEntry)}>Eliminar</button></td>
                                             </tr>
                                         );
                                     })
