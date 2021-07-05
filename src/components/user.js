@@ -7,7 +7,7 @@ import './User.css'
 function User({addOrderId}) {
   const [userName, setUserName] = useState(null);
 return (
-      <div className={`content-user justify-content-md-center`}>
+      <div className={"content-user"}>
         <Row>
           <h1>Toma de pedidos</h1>
         </Row>
@@ -15,7 +15,7 @@ return (
           <input  className="input-client" onChange={event => setUserName(event.target.value)} type="text" placeholder="Nombre de cliente"></input>
         </Row>
         <Row>
-          <Button className="btn-group-toggle" onClick={sendName(userName, addOrderId)}>Entrar</Button>
+          <Button variant="light" onClick={sendName(userName, addOrderId)}>Entrar</Button>
         </Row>
       </div>
   );

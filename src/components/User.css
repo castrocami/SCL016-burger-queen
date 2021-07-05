@@ -3,27 +3,27 @@
  }
 
 .content-user {
-   color:#7B4404;
+   color:#FFFFFF;
+   background: rgba(0, 0, 0, 0.57);
    font-size: 15px;
    text-align: center;
+   margin-top: 5%;
+   padding: 2%;
  }
 
  .content-user .row {
    justify-content: center;
  }
 
- .btn-group-toggle{
-   background-color: #9D785E;
-   color: #FFFFFF;
-   border: none;
- }
-
  .input-client{
-   background-color: #DAC0AD;
+   background-color: #FFFFFF;
    border: none;
+   margin-bottom: 2%;
    text-align: center;
+   height: 5vh;
+   width: 30vw;
  }
  
  .input-client::placeholder {
-  color:#FFFFFF;
+  color:#000000;
 }

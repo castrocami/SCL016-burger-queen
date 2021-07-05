@@ -1,11 +1,14 @@
 .user-container{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    background-color: #DAC0AD;
+    justify-content: flex-start;
+    background-image: url(../images/justa.jpeg);
+    background-color: #D7D7D7;
     margin: auto;
     width: 100%;
     height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .order-container{
@@ -13,7 +16,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: solid 3px black;
     width: 100%;
     height: 100vh;
     background-color: #D7D7D7;
@@ -21,7 +23,12 @@
 
 .order-display-name{
     background-color: #C4C4C4;
+    font-size: 2%;
     width: 100%;
+}
+
+.order-display-name h1{
+    font-size: 2vw;
 }
 
 .display-products{
