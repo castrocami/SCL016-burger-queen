@@ -8,9 +8,7 @@ function App() {
   // const name = "Paola";
   return (
     <Container className="App">
-      <Row>
-        <Col> <ClientOrder /> </Col>
-      </Row>
+      <ClientOrder />
     </Container>
   );
 }
