@@ -9,17 +9,6 @@ function App() {
   return (
     <Container className="App">
       <Row>
-        <Col ></Col>
-        <Col>
-          <h1>
-            Justa Panaderia
-          </h1>
-          <h3>
-            Toma Pedidos
-          </h3>
-        </Col>
-      </Row>
-      <Row>
         <Col> <ClientOrder /> </Col>
       </Row>
     </Container>

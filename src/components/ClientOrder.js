@@ -4,6 +4,8 @@ import { useState } from "react";
 import ProductsSection from "./ProductsSection";
 import SendOrderToKitchen from "./SendOrder"
 import User from './User';
+import './ClientOrder.css'
+
 
 function ClientOrder() {
     //El estado de  valor inicial,
@@ -82,8 +84,8 @@ function ClientOrder() {
         
     if(orderId == null){
       return(
-      <Container>
-        <User addOrderId={addOrderId} />
+      <Container className = {"user-container"}>
+            <User addOrderId={addOrderId} />
       </Container>)
     }
     return (

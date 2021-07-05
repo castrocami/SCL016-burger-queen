@@ -1,0 +1,29 @@
+.container-user {
+   margin: 40px;
+ }
+
+.content-user {
+   color:#7B4404;
+   font-size: 15px;
+   text-align: center;
+ }
+
+ .content-user .row {
+   justify-content: center;
+ }
+
+ .btn-group-toggle{
+   background-color: #9D785E;
+   color: #FFFFFF;
+   border: none;
+ }
+
+ .input-client{
+   background-color: #DAC0AD;
+   border: none;
+   text-align: center;
+ }
+ 
+ .input-client::placeholder {
+  color:#FFFFFF;
+}
