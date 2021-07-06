@@ -106,7 +106,7 @@ function ClientOrder() {
 			<Row >
 				<Col className = {"display-products"}>
 					<Row>
-						<div>
+						<div className = {"table-products"}>
 							<Table striped bordered hover size="sm">
 								<thead>
 									<tr>

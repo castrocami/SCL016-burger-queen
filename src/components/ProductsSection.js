@@ -7,7 +7,7 @@ import './ProductsSection.css'
 function ProductsSection({addEntry, orderEntries}) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   return (
-    <div className="App">
+    <div className = {"products-section"}>
       <h1>Lista de productos</h1>
       <div className={"category-products"}>
         {categories.map((category,index) => {

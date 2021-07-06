@@ -1,15 +1,14 @@
 import './App.css';
-import { Col, Container, Row } from 'react-bootstrap';
 import ClientOrder from './components/ClientOrder';
 
 
 
 function App() {
-  // const name = "Paola";
   return (
-    <Container className="App">
+    // Esto no tiene por qué ser un div container y eso hace que tenga más margen a los lados
+    <div className="App">
       <ClientOrder />
-    </Container>
+    </div>
   );
 }
 export default App;
