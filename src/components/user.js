@@ -1,19 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import firebase from "firebase/app"
 import { useState } from "react";
-import { Button } from 'react-bootstrap';
+import { Button, Row} from 'react-bootstrap';
+import './User.css'
 
 function User({addOrderId}) {
   const [userName, setUserName] = useState(null);
-  return (
-    <div className="App">
-      <main>
-        <div>
-          <input onChange={event => setUserName(event.target.value)} type="text" placeholder="Nombre de cliente"></input>
-          <Button className="btn-group-toggle" onClick={sendName(userName, addOrderId)}>Check</Button>
-        </div>
-      </main>
-    </div>
+return (
+      <div className={"content-user"}>
+        <Row>
+          <h1>Toma de pedidos</h1>
+        </Row>
+        <Row>
+          <input  className="input-client" onChange={event => setUserName(event.target.value)} type="text" placeholder="Nombre de cliente"></input>
+        </Row>
+        <Row>
+          <Button variant="light" onClick={sendName(userName, addOrderId)}>Entrar</Button>
+        </Row>
+      </div>
   );
 }
 

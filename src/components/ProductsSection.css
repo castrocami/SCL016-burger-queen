@@ -1,0 +1,16 @@
+
+.category-products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.category-products button{
+    margin: 5%;
+    width: 100%;
+}
+
+.products-section{
+    background-color: none;
+}

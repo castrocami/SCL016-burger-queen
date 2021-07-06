@@ -1,12 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-// import firebase from "firebase/app"
 import { Button } from 'react-bootstrap';
 import firebase from "firebase/app"
 
 function SendOrderToKitchen({orderId , orderEntries}) {
     return (
-        <div>
-            <Button onClick = {sendOrder(orderId , orderEntries)} >Enviar a Cocina</Button>
+        <div className ={"send-to-kitchen"}>
+            <Button className="btn btn-dark"variant="primary" size="lg" onClick = {sendOrder(orderId , orderEntries)} >Enviar a Cocina</Button>
         </div>
     )
 }

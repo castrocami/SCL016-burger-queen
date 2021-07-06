@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-image: url(images/justa.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .App-logo {
