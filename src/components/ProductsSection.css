@@ -13,4 +13,12 @@
 
 .products-section{
     background-color: none;
+    margin-bottom: 30%;
+}
+
+
+@media screen and (max-width:500px) {
+    .products-section{
+        margin-bottom: 10%;
+    } 
 }

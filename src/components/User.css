@@ -7,7 +7,7 @@
    background: rgba(0, 0, 0, 0.57);
    font-size: 15px;
    text-align: center;
-   margin-top: 5%;
+   margin-top: 25%;
    padding: 2%;
  }
 
@@ -26,4 +26,13 @@
  
  .input-client::placeholder {
   color:#000000;
+}
+
+
+@media screen and (max-width:500px) {
+  .content-user {
+    margin-top: 50%;
+    font-size: 10px;
+  }
+
 }
