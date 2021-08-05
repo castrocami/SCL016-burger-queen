@@ -8,12 +8,12 @@ import "firebase/firestore";
 // Your web app's Firebase configuration
 export const firebaseInit = () =>{
 var firebaseConfig = {
-    apiKey: "AIzaSyAAnE6zSm6izr87XlPP3cyzlqnTligSCHk",
-    authDomain: "burger-queen-38686.firebaseapp.com",
-    projectId: "burger-queen-38686",
-    storageBucket: "burger-queen-38686.appspot.com",
-    messagingSenderId: "448075553648",
-    appId: "1:448075553648:web:3e4afa482a5c96dee90db5"
+    apiKey: "AIzaSyAosleEK0trYzSw03nMQ_JvjawF4IL0gbw",
+    authDomain: "burger-queen-58a6d.firebaseapp.com",
+    projectId: "burger-queen-58a6d",
+    storageBucket: "burger-queen-58a6d.appspot.com",
+    messagingSenderId: "201442923765",
+    appId: "1:201442923765:web:082b0eb8e26c18f01261bc"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
